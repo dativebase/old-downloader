@@ -6,15 +6,19 @@ Database) instance.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Clone the source:
+
+    $ git clone https://github.com/dativebase/old-downloader.git
 
 Using Leiningen, create the standalone .jar file:
 
     $ lein uberjar
-          
+
+Note: you must have Leiningen and Clojure installed.
+
 
 ## Usage
-    
+
 To download an OLD's data, supply the URL, username and password for the OLD
 instance whose data you want to download:
 
@@ -29,12 +33,12 @@ Alternatively, use `lein run`:
       https://some.domain.com/path/to/old/instance/ \
       someusername \
       somepassword
-      
+
 If successful, your OLD data should be present under a local `olds/` directory,
 within a subdirectory named after the URL you supplied and the current
 timestamp. Successful output will look something like this:
 
-    Attempting to download the data from the OLD at 'https://some.domain.com/path/to/old/instance/' using username 'someusername' and password 'somepassword**.
+    Attempting to download the data from the OLD at 'https://some.domain.com/path/to/old/instance/' using username 'someusername' and password 'somepassword'.
      - 1834 forms downloaded and stored at olds/https-some-domain-com-path-to-old-instance-1553205324/forms.json.
     Success!
 
@@ -43,7 +47,7 @@ timestamp. Successful output will look something like this:
 
 ## License
 
-Copyright © 2019 FIXME
+Copyright © 2019 Joel Dunham
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
