@@ -1,32 +1,45 @@
 # old-downloader
 
-FIXME: description
+A simple tool for downloading all of the data from an OLD (Online Linguistic
+Database) instance.
+
 
 ## Installation
 
 Download from http://example.com/FIXME.
 
+Using Leiningen, create the standalone .jar file:
+
+    $ lein uberjar
+          
+
 ## Usage
+    
+To download an OLD's data, supply the URL, username and password for the OLD
+instance whose data you want to download:
 
-FIXME: explanation
+    $ java -jar target/uberjar/old-downloader-0.1.0-SNAPSHOT-standalone.jar \
+      https://some.domain.com/path/to/old/instance/ \
+      someusername \
+      somepassword
 
-    $ java -jar old-downloader-0.1.0-standalone.jar [args]
+Alternatively, use `lein run`:
 
-## Options
+    $ lein run \
+      https://some.domain.com/path/to/old/instance/ \
+      someusername \
+      somepassword
+      
+If successful, your OLD data should be present under a local `olds/` directory,
+within a subdirectory named after the URL you supplied and the current
+timestamp. Successful output will look something like this:
 
-FIXME: listing of options this app accepts.
+    Attempting to download the data from the OLD at 'https://some.domain.com/path/to/old/instance/' using username 'someusername' and password 'somepassword**.
+     - 1834 forms downloaded and stored at olds/https-some-domain-com-path-to-old-instance-1553205324/forms.json.
+    Success!
 
-## Examples
+**Note: file data are not currently downloaded by this tool.**
 
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
 
 ## License
 

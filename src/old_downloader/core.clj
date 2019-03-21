@@ -136,6 +136,18 @@
       (fetch-persist resource old-client path))))
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Usage:
+
+      $ lein run https://some.domain.com/path/to/old/instance/ someusername somepassword
+  "
   [& args]
-  (println "Hello, World!"))
+  (if (not args)
+    (println "Please supply the URL, username and password of the OLD whose data you want to download.")
+    (do
+      (println (apply (partial
+                       format
+                       (str "Attempting to download the data from the OLD at '%s'"
+                            " using username '%s' and password '%s'."))
+                      args))
+      (println (str " - " (string/join "\n - " (apply download-old args))))
+      (println "Success!"))))
